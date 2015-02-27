@@ -1,0 +1,212 @@
+/*---------------------------------------
+	Browser Reset
+---------------------------------------*/
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------------------------------
+	Custom CSS
+---------------------------------------*/
+
+/*Global styles*/
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.shine::after {
+	content: "";
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	bottom: -50%;
+	left: -50%;
+	background: linear-gradient(to bottom, rgba(229,172,142,0), rgba(255,255,255,0.5), rgba(229,172,142,0));
+	transform: rotateZ(60deg) translate(-5em, 250%);
+	-webkit-transform: rotateZ(60deg) translate(-5em, 10.5em);
+}
+.shine:hover::after, .shine:focus::after {
+	animation: sheen 500ms forwards;
+	-webkit-animation: sheen 500ms forwards;
+}
+@keyframes sheen {
+	100% {
+		transform: rotateZ(60deg) translate(1em, -5em);
+	}
+}
+@-webkit-keyframes sheen {
+	100% {
+		transform: rotateZ(60deg) translate(1em, -5em);
+	}
+}
+
+/*body styles*/
+
+body {
+	font-family: Arial;
+	font-weight: 200;
+	line-height: 1.2;
+}
+
+/*header styles*/
+
+header {
+	background-color: hsl(202, 91%, 87%);
+	overflow: hidden;
+}
+header img {
+	display: block;
+	width: 200px;
+	margin: 10px auto;
+	background-color: hsl(0, 0%, 100%);
+	padding: 10px;
+}
+header li {
+	display: inline-block;
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding: 10px 20px;
+}
+header li a {
+	position: relative;
+	display: block;
+	padding: 10px 0;
+	background-color: hsl(203, 94%, 80%);
+	border: 1px solid hsl(203, 94%, 70%);
+	border-radius: 5px;
+	color: hsl(0, 0%, 100%);
+	text-decoration: none;
+	transition: all 500ms ease-in-out;
+	overflow: hidden;
+}
+header li a:hover {
+	background-color: hsl(203, 94%, 75%);
+	border: 1px solid hsl(203, 94%, 65%);
+}
+
+/*hero styles*/
+
+.hero {
+	background-color: hsl(50, 91%, 50%);
+	height: 200px;
+	background-image: url(../img/sky.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*main styles*/
+
+main {
+	background-color: hsl(0, 0%, 82%);
+	position: relative;
+}
+main img {
+	position: absolute;
+	top: 20px;
+	left: 15%;
+	z-index: 1;
+	width: 25%;
+	border-radius: 50%;
+	transition: left 250ms ease-in-out;
+}
+main img:hover {
+	left: 5%
+}
+article {
+	position: relative;
+	z-index: 2;
+	width: 75%;
+	float: right;
+	background-color: #fff;
+	padding: 0 20px 40px;
+	margin-bottom: 60px;
+	margin-right: 5%;
+}
+article::before {
+	content: "";
+	display: block;
+	background-color: #fff;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background-image: url("../img/mail.png");
+	background-repeat: repeat-x;
+}
+h1 {
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+p {
+	font-size: 20px;
+	margin: 10px 0;
+}
+h2 {
+	font-size: 30px;
+	margin: 20px 0;
+	text-align: right;
+}
+
+/*footer styles*/
+
+footer {
+	background-color: hsl(0, 0%, 19%);
+	padding: 20px;
+	color: white;
+}
+footer p {
+	font-size: 80%;
+}
